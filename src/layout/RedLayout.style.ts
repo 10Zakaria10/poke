@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 
 export const StyledTemplateListContainer = styled.div`
   display: flex;
+  min-height: 100vh;
 `;
 
 export const StyledChildrenContainer = styled.div`

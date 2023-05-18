@@ -4,7 +4,7 @@ import PokemonLogo from "../../atoms/pokemonLogo/PokemonLogo";
 
 const SidePage: React.FC = () => {
   return (
-    <StyledSidePageContainer>
+    <StyledSidePageContainer data-testid="side-page-container">
       <PokemonLogo />
     </StyledSidePageContainer>
   );

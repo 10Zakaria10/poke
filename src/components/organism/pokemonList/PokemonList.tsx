@@ -4,6 +4,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { useEffect, useState } from "react";
 import useFetch from "../../../hooks/useFetchPokemons";
 import { PokemonType } from "../../../store/pokemon/types";
+import Loading from "../../atoms/Loading/Loading";
 
 const PokemonList: React.FC = () => {
   const { sendRequest, pokemons, loading } = useFetch();
@@ -20,7 +21,7 @@ const PokemonList: React.FC = () => {
   }, [sendRequest]);
 
   if (loading) {
-    return <div>Loading</div>;
+    return <Loading />;
   }
   return (
     <InfiniteScroll
