@@ -1,1 +1,1 @@
-export { default } from "./PokemonInformationAtom";
+export { default } from "./PokemonInformation";

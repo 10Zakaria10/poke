@@ -3,7 +3,7 @@ import {
   StyledDetailsCard,
   StyledDetailsContainer,
   StyledDetailsAvatar,
-} from "./PokemonDetailsMolecule.style";
+} from "./PokemonDetails.style";
 import { PokemonType } from "../../../store/pokemon/types";
 import PokemonStats from "../pokemonStats/PokemonStats";
 

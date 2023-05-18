@@ -1,1 +1,1 @@
-export { default } from "./PokemonCardMolecule";
+export { default } from "./PokemonCard";

@@ -1,5 +1,5 @@
 import * as React from "react";
-import PokemonCard from "../../molecules/pokemonCard/PokemonCardMolecule";
+import PokemonCard from "../../molecules/pokemonCard/PokemonCard";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useEffect, useState } from "react";
 import useFetch from "../../../hooks/useFetchPokemons";
@@ -23,18 +23,16 @@ const PokemonList: React.FC = () => {
     return <div>Loading</div>;
   }
   return (
-    <>
-      <InfiniteScroll
-        dataLength={pokemons.length}
-        next={fetchMoreData}
-        hasMore={true}
-        loader={<h4>Loading...</h4>}
-      >
-        {pokemons.map((pokemon: PokemonType) => (
-          <PokemonCard key={pokemon.id} pokemon={pokemon} />
-        ))}
-      </InfiniteScroll>
-    </>
+    <InfiniteScroll
+      dataLength={pokemons.length}
+      next={fetchMoreData}
+      hasMore={false}
+      loader={<h4>Loading...</h4>}
+    >
+      {pokemons.map((pokemon: PokemonType) => (
+        <PokemonCard key={pokemon.id} pokemon={pokemon} />
+      ))}
+    </InfiniteScroll>
   );
 };
 

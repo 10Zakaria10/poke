@@ -1,4 +1,4 @@
-import { StyledValueWrapper } from "./PokemonInformationAtom.style";
+import { StyledValueWrapper } from "./PokemonInformation.style";
 
 interface IPokemonInformationProps {
   attribute: string;

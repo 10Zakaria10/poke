@@ -1,12 +1,11 @@
 import React from "react";
 import { StoreProvider } from "./store/provider";
-import { RouterProvider } from "react-router-dom";
-import routes from "./routes";
+import PokemonListTemplate from "./components/templates/pokemonList/PokemonListTemplate";
 
 const App: React.FC = () => {
   return (
     <StoreProvider>
-      <RouterProvider router={routes} />
+      <PokemonListTemplate />
     </StoreProvider>
   );
 };

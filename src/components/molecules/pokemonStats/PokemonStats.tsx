@@ -1,5 +1,5 @@
 import * as React from "react";
-import PokemonInformation from "../../atoms/pokemonInformation/PokemonInformationAtom";
+import PokemonInformation from "../../atoms/pokemonInformation/PokemonInformation";
 import { PokemonType } from "../../../store/pokemon/types";
 interface IPokemonStatsProps {
   pokemon: PokemonType;
