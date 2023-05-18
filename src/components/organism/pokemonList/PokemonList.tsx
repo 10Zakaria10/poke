@@ -30,7 +30,7 @@ const PokemonList: React.FC = () => {
       hasMore={false}
       loader={<h4>Loading...</h4>}
     >
-      {pokemons.map((pokemon: PokemonType) => (
+      {pokemons.map((pokemon: PokemonType, index: number) => (
         <PokemonCard key={pokemon.id} pokemon={pokemon} />
       ))}
     </InfiniteScroll>

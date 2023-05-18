@@ -17,7 +17,7 @@ const PokemonDetails: React.FC<IPokemonDetailsProps> = ({ pokemon }) => {
         <h2>{pokemon.name}</h2>
         <StyledDetailsAvatar>
           <img
-            alt="frontImage"
+            alt="DetailedImage"
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
           />
         </StyledDetailsAvatar>

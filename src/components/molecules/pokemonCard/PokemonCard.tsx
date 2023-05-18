@@ -19,7 +19,7 @@ const PokemonCard: React.FC<IPokemonCardProps> = ({ pokemon }) => {
   const handleClose = () => setOpen(false);
 
   return (
-    <StyledCard onClick={handleOpen}>
+    <StyledCard data-cy={`pokemon-card-${pokemon.id}`} onClick={handleOpen}>
       <StyledCardContent>
         <div>{pokemon.name}</div>
         <StyledCardAvatar>
