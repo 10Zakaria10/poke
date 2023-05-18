@@ -6,12 +6,12 @@ import { RootState } from "../types";
 import { PokemonType } from "./types";
 
 type PokemonState = {
-  value: number;
+  loading: boolean;
   pokemons: PokemonType[];
 };
 
 const initialState: PokemonState = {
-  value: 0,
+  loading: false,
   pokemons: [],
 };
 
@@ -20,15 +20,8 @@ const pokemonSlice = createSlice({
   initialState,
 
   reducers: {
-    increment: (state) => {
-      state.value++;
-    },
-    decrement: (state) => {
-      state.value--;
-    },
-
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
+    setLoading: (state, action: PayloadAction<{ loading: boolean }>) => {
+      state.loading = action.payload.loading;
     },
     fetchPokemonsRequest: (
       state,
@@ -40,19 +33,18 @@ const pokemonSlice = createSlice({
       ) {
         state.pokemons.push(...action.payload);
       }
+      state.loading = false;
     },
   },
 });
 
-export const {
-  increment,
-  decrement,
-  incrementByAmount,
-  fetchPokemonsRequest,
-  fetchPokemonsSuccess,
-} = pokemonSlice.actions;
+export const { setLoading, fetchPokemonsRequest, fetchPokemonsSuccess } =
+  pokemonSlice.actions;
 
 export const selectPokemons = (state: RootState): PokemonType[] =>
   state.pokemonReducer.pokemons;
+
+export const selectLoading = (state: RootState): boolean =>
+  state.pokemonReducer.loading;
 
 export const { reducer: pokemonReducer } = pokemonSlice;

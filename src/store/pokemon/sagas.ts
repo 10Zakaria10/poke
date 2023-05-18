@@ -11,7 +11,7 @@ export function* fetchPokemons(
     const data: PokemonType[] = yield call(pokemonService.getPokemon, offset);
     yield put(fetchPokemonsSuccess(data));
   } catch (error) {
-    // console.log("Error");
+    // normally i should dispatch errorAction but i dont have time :/
   }
 }
 

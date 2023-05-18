@@ -6,7 +6,7 @@ import useFetch from "../../../hooks/useFetchPokemons";
 import { PokemonType } from "../../../store/pokemon/types";
 
 const PokemonList: React.FC = () => {
-  const { sendRequest, pokemons } = useFetch();
+  const { sendRequest, pokemons, loading } = useFetch();
   const [offset, setOffset] = useState(0);
 
   const fetchMoreData = () => {
@@ -19,6 +19,9 @@ const PokemonList: React.FC = () => {
     sendRequest();
   }, [sendRequest]);
 
+  if (loading) {
+    return <div>Loading</div>;
+  }
   return (
     <>
       <InfiniteScroll
